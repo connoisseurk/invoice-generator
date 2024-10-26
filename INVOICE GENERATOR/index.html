@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Invoice Generator</h2>
+        <form id="invoice-generator">
+            <label for="clientname">Client Name</label>
+            <input type="text" name="clientname" id="clientname" placeholder="Enter the client name" required>
+
+            <label for="servicedescription">Service Description</label>
+            <textarea name="servicedescription" id="servicedescription" placeholder="Describe the service" required></textarea>
+
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount" placeholder="Enter amount" step="0.01" required>
+
+            <label for="discount">Discount (%)</label>
+            <input type="number" name="discount" id="discount" placeholder="Discount %" step="0.01" required>
+
+            <button type="button" onclick="generateinvoice()">Generate Invoice</button>
+        </form>
+
+        <div class="invoice-output" id="invoiceOutput">
+            <h3>Invoice Preview</h3>
+            <p id="clientOutput"></p>
+            <p id="serviceOutput"></p>
+            <p id="amountOutput"></p>
+            <p id="totalOutput"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
